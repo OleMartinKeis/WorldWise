@@ -1,7 +1,11 @@
 import "./App.css";
 
 function App() {
-    return <></>;
+    return (
+        <>
+            <div>WorldWise</div>
+        </>
+    );
 }
 
 export default App;
