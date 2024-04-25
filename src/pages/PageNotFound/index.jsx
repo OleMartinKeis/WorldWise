@@ -4,7 +4,7 @@ function PageNotFound() {
     return (
         <div>
             <PageNav />
-            Not found
+            <h1> Not found</h1>
         </div>
     );
 }
