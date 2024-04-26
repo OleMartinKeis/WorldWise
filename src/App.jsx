@@ -21,6 +21,7 @@ function App() {
                             path="countries"
                             element={<p>List of countries</p>}
                         />
+                        <Route path="form" element={<p>Form</p>} />
                     </Route>
                     <Route path="/login" element={<Login />} />
                 </Routes>
