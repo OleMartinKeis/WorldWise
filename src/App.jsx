@@ -14,8 +14,7 @@ function App() {
                     <Route path="/" element={<Homepage />} />
                     <Route path="product" element={<Product />} />
                     <Route path="pricing" element={<Pricing />} />
-                    <Route path="app" element={<AppLayout />} />
-                    <Route path="*" element={<PageNotFound />}>
+                    <Route path="app" element={<AppLayout />}>
                         <Route path="cities" element={<p>List of cities</p>} />
                         <Route
                             path="countries"
@@ -23,6 +22,7 @@ function App() {
                         />
                         <Route path="form" element={<p>Form</p>} />
                     </Route>
+                    <Route path="*" element={<PageNotFound />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
             </BrowserRouter>
