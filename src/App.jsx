@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import { useEffect, useState } from "react";
 
-const URL = "http://localhost:9000";
+const BASE_URL = "http://localhost:9000";
 
 function App() {
     const [cities, setCities] = useState({});
@@ -16,7 +16,7 @@ function App() {
 
     useEffect(function () {
         async function fetchCities() {
-            const res = await fetch(`${URL}`);
+            const res = await fetch(`${BASE_URL}`);
         }
     }, []);
 
