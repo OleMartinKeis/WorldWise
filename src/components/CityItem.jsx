@@ -1,3 +1,11 @@
+import styles from "./CityItem.module.css";
+
 export default function CityItem({ city }) {
-    return <div></div>;
+    console.log(city);
+
+    return (
+        <li className={styles.cityItem}>
+            <span className={styles.emoji}></span>
+        </li>
+    );
 }
