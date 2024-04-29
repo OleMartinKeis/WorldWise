@@ -7,8 +7,11 @@ export default function CountryList({ cities, isLoading }) {
     if (isLoading) return <Spinner />;
 
     const countries = cities.reduce((arr, city) => {
-        if (!arr.map((el) => el.city).includes(city.country))
-            return [...arr, { country: city.country, emoji: city.emoji }];
+        if (!arr.map((el) => el.country).includes(city.country))
+            return [
+                ...arr,
+                { country: city.country, emoji: city.emoji, key: city.id },
+            ];
         else return arr;
     }, []);
 
