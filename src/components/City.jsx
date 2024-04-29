@@ -10,10 +10,10 @@ const formatDate = (date) =>
     }).format(new Date(date));
 
 function City() {
+    const { id } = useParams();
     const [searchParams, setSearchParams] = useSearchParams();
     const lat = searchParams.get("lat");
     const lng = searchParams.get("lng");
-    const { id } = useParams();
     // TEMP DATA
     const currentCity = {
         cityName: "Lisbon",
@@ -24,7 +24,11 @@ function City() {
 
     const { cityName, emoji, date, notes } = currentCity;
 
-    return <h1></h1>;
+    return (
+        <h1>
+            City {id} Position: {lat}, {lng}
+        </h1>
+    );
 
     // return (
     //     <div className={styles.city}>
