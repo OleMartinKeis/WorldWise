@@ -14,7 +14,7 @@ export default function CityItem({ city }) {
         <li className={styles.cityItem}>
             <span className={styles.emoji}>{emoji}</span>
             <h3 className={styles.name}>{cityName}</h3>
-            <time className={styles.date}>{formatDate(date)}</time>
+            {date && <time className={styles.date}>{formatDate(date)}</time>}
             <button className={styles.deleteBtn}>&times;</button>
         </li>
     );
