@@ -1,10 +1,16 @@
-import CityItem from "./CountryItem";
+import CountryItem from "./CountryItem";
 import styles from "./CountryList.module.css";
 import Message from "./Message";
 import Spinner from "./Spinner";
 
 export default function CountryList({ cities, isLoading }) {
     if (isLoading) return <Spinner />;
+
+    const countries = cities.reduce((arr, city) => {
+        if (!arr.map((el) => el.city).includes(city.country))
+            return [...arr, { country: city.country, emoji: city.emoji }];
+        else return arr;
+    }, []);
 
     if (!countries.length)
         return (
@@ -13,8 +19,8 @@ export default function CountryList({ cities, isLoading }) {
 
     return (
         <ul className={styles.countryList}>
-            {countries.map((city) => (
-                <CityItem city={city} key={city.id} />
+            {countries.map((country) => (
+                <CountryItem country={country} key={country.id} />
             ))}
         </ul>
     );
