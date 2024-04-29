@@ -16,9 +16,13 @@ function App() {
 
     useEffect(function () {
         async function fetchCities() {
-            const res = await fetch(`${BASE_URL}/cities`);
-            const data = await res.json();
-            setCities(data);
+            try {
+                const res = await fetch(`${BASE_URL}/cities`);
+                const data = await res.json();
+                setCities(data);
+            } catch {
+                alert("There was an error loading data");
+            }
         }
     }, []);
 
