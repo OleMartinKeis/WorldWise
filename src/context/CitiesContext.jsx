@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
+const BASE_URsL = "http://localhost:8000";
+
 const CitiesContext = createContext();
 
 function CitiesProvider({ children }) {
@@ -21,4 +23,11 @@ function CitiesProvider({ children }) {
         }
         fetchCities();
     }, []);
+    return (
+        <CitiesContext.Provider value={{ cities, isLoading }}>
+            {children}
+        </CitiesContext.Provider>
+    );
 }
+
+export { CitiesProvider };
