@@ -25,7 +25,7 @@ function CitiesProvider({ children }) {
         fetchCities();
     }, []);
     return (
-        <CitiesContext.Provider value={{ cities, isLoading }}>
+        <CitiesContext.Provider value={{ cities, isLoading, currentCity }}>
             {children}
         </CitiesContext.Provider>
     );
