@@ -26,7 +26,7 @@ function CitiesProvider({ children }) {
     }, []);
 
     async function getCity(id) {
-         {
+        {
             try {
                 setIsLoading(true);
                 const res = await fetch(`${BASE_URL}/cities/${id}`);
@@ -37,11 +37,13 @@ function CitiesProvider({ children }) {
             } finally {
                 setIsLoading(false);
             }
-        
+        }
     }
 
     return (
-        <CitiesContext.Provider value={{ cities, isLoading, currentCity }}>
+        <CitiesContext.Provider
+            value={{ cities, isLoading, currentCity, getCity }}
+        >
             {children}
         </CitiesContext.Provider>
     );
