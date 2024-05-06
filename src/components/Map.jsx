@@ -17,7 +17,11 @@ export default function Map() {
     const { cities } = useCities();
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    const {} = useGeolocation();
+    const {
+        isLoading: isLoadingPosition,
+        position: geolocationPosition,
+        getPosition,
+    } = useGeolocation();
 
     const mapLat = searchParams.get("lat");
 
