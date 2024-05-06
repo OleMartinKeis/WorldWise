@@ -12,20 +12,20 @@ import {
     useMap,
     useMapEvents,
 } from "react-leaflet";
+import { useUrlPosition } from "./hooks/useUrlPosition";
 
 export default function Map() {
     const [mapPosition, setMapPosition] = useState([40, 0]);
     const { cities } = useCities();
     const navigate = useNavigate();
-    const [searchParams] = useSearchParams();
+
     const {
         isLoading: isLoadingPosition,
         position: geolocationPosition,
         getPosition,
     } = useGeolocation();
 
-    const mapLat = searchParams.get("lat");
-    const mapLng = searchParams.get("lng");
+    const [mapLat, mapLng] = useUrlPosition();
 
     useEffect(
         function () {
