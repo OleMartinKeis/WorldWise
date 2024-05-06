@@ -3,6 +3,7 @@ import styles from "./Map.module.css";
 import { useEffect, useState } from "react";
 import { useCities } from "../context/CitiesContext";
 import { useGeolocation } from "./hooks/useGeolocation";
+import Button from "./Button";
 import {
     MapContainer,
     Marker,
@@ -11,7 +12,6 @@ import {
     useMap,
     useMapEvents,
 } from "react-leaflet";
-import Button from "./Button";
 
 export default function Map() {
     const [mapPosition, setMapPosition] = useState([40, 0]);
@@ -25,7 +25,6 @@ export default function Map() {
     } = useGeolocation();
 
     const mapLat = searchParams.get("lat");
-
     const mapLng = searchParams.get("lng");
 
     useEffect(
