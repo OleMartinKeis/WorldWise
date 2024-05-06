@@ -11,6 +11,7 @@ import {
     useMap,
     useMapEvents,
 } from "react-leaflet";
+import Button from "./Button";
 
 export default function Map() {
     const [mapPosition, setMapPosition] = useState([40, 0]);
@@ -36,6 +37,9 @@ export default function Map() {
 
     return (
         <div className={styles.mapContainer}>
+            <Button type="position" onClick={getPosition}>
+                {isLoadingPosition ? "Loading..." : "Use your position"}
+            </Button>
             <MapContainer
                 className={styles.map}
                 center={mapPosition}
