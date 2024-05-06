@@ -26,7 +26,7 @@ export default function Map() {
         },
         [mapLat, mapLng]
     );
-    console.log(mapLat);
+
     return (
         <div className={styles.mapContainer} onClick={() => navigate("form")}>
             <MapContainer
