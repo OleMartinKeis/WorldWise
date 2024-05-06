@@ -51,6 +51,7 @@ export default function Map() {
                     </Marker>
                 ))}
                 {mapLat && <ChangeCenter position={mapPosition} />}
+                <DetectClick />
             </MapContainer>
         </div>
     );
