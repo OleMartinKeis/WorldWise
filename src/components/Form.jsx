@@ -63,6 +63,8 @@ function Form() {
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        if (!cityName || !date) return;
     }
 
     if (isLoadingGeocoding) return <Spinner />;
