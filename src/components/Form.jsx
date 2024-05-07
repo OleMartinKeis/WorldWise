@@ -33,6 +33,7 @@ function Form() {
             async function fetchCityData() {
                 try {
                     setIsLoadingGeocoding(true);
+                    setGeocodingError("");
                     const res = await fetch(
                         /*Calls the API with lat & lng custom values  */
                         `${BASE_URL}?latitude=${lat}&longitude=${lng}`
