@@ -18,12 +18,11 @@ export function convertToEmoji(countryCode) {
 function Form() {
     const [lat, lng] = useUrlPosition();
     const navigate = useNavigate();
+    const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
     const [cityName, setCityName] = useState("");
     const [country, setCountry] = useState("");
     const [date, setDate] = useState(new Date());
     const [notes, setNotes] = useState("");
-
-    const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
 
     useEffect(function () {
         async function fetchCityData() {
