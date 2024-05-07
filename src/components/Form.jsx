@@ -35,12 +35,17 @@ function Form() {
                         /*Calls the API with lat & lng custom values  */
                         `${BASE_URL}?latitude=${lat}&longitude=${lng}`
                     );
+                    const data = await res.json();
+                    console.log(data);
+                    setCityName(data.city || data.locality || "");
+                    setCountry(data.countryName);
                 } catch (err) {
                     console.error(err);
                 } finally {
                     setIsLoadingGeocoding(false);
                 }
             }
+            fetchCityData();
         },
         [lat, lng]
     );
