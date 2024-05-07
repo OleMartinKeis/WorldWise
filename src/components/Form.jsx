@@ -6,6 +6,7 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import BackButton from "./BackButton";
 import { useUrlPosition } from "./hooks/useUrlPosition";
+import Message from "./Message";
 
 export function convertToEmoji(countryCode) {
     const codePoints = countryCode
@@ -56,6 +57,8 @@ function Form() {
         },
         [lat, lng]
     );
+
+    if (geocodingError) return <Message message={geocodingError} />;
 
     return (
         <form className={styles.form}>
