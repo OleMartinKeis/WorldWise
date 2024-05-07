@@ -76,6 +76,8 @@ function Form() {
             notes,
             position: { lat, lng },
         };
+
+        createCity(newCity);
     }
 
     if (isLoadingGeocoding) return <Spinner />;
