@@ -86,7 +86,10 @@ function Form() {
 
             <div className={styles.row}>
                 <label htmlFor="date">When did you go to {cityName}?</label>
-                <DatePicker />
+                <DatePicker
+                    onChange={(date) => setDate(date)}
+                    selected={date}
+                />
             </div>
 
             <div className={styles.row}>
