@@ -26,20 +26,24 @@ function Form() {
     const [date, setDate] = useState(new Date());
     const [notes, setNotes] = useState("");
 
-    useEffect(function () {
-        async function fetchCityData() {
-            try {
-                setIsLoadingGeocoding(true);
-                const res = await fetch(
-                    `${BASE_URL}?latitude=${lat}&longitude=${lng}`
-                );
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsLoadingGeocoding(false);
+    useEffect(
+        function () {
+            async function fetchCityData() {
+                try {
+                    setIsLoadingGeocoding(true);
+                    const res = await fetch(
+                        /*Calls the API with lat & lng custom values  */
+                        `${BASE_URL}?latitude=${lat}&longitude=${lng}`
+                    );
+                } catch (err) {
+                    console.error(err);
+                } finally {
+                    setIsLoadingGeocoding(false);
+                }
             }
-        }
-    }, []);
+        },
+        [lat, lng]
+    );
 
     return (
         <form className={styles.form}>
