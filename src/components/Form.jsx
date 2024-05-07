@@ -65,6 +65,15 @@ function Form() {
         e.preventDefault();
 
         if (!cityName || !date) return;
+
+        const newCity = {
+            cityName,
+            country,
+            emoji,
+            date,
+            notes,
+            position: { lat, lng },
+        };
     }
 
     if (isLoadingGeocoding) return <Spinner />;
