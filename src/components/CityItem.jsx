@@ -10,7 +10,7 @@ const formatDate = (date) =>
     }).format(new Date(date));
 
 export default function CityItem({ city }) {
-    const { currentCity } = useCities();
+    const { currentCity, deleteBtn } = useCities();
     const { cityName, emoji, date, id, position } = city;
 
     function handleClick(e) {
