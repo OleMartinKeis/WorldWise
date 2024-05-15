@@ -7,7 +7,10 @@ const CitiesContext = createContext();
 const initialState = {};
 
 function reducer(state, action) {
-    cities: [],
+    cities: [];
+    isLoading: false;
+    currentCity: {
+    }
 }
 
 function CitiesProvider({ children }) {
