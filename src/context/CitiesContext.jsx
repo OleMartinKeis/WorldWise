@@ -33,6 +33,11 @@ function reducer(state, action) {
         case "cities/deleted":
 
         case "rejected":
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload,
+            };
 
         default:
             throw new Error("Unknown action type");
