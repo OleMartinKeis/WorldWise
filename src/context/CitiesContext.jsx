@@ -16,7 +16,15 @@ const initialState = {
     currentCity: {},
 };
 
-function reducer(state, action) {}
+function reducer(state, action) {
+    switch (action.type) {
+        case "cities/loaded":
+
+        case "cities/created":
+
+        case "cities/deleted":
+    }
+}
 
 function CitiesProvider({ children }) {
     const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
