@@ -28,6 +28,8 @@ function reducer(state, action) {
                 cities: action.payload,
             };
 
+        case "city/loaded":
+
         case "cities/created":
 
         case "cities/deleted":
