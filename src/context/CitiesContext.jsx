@@ -26,6 +26,8 @@ function reducer(state, action) {
         case "cities/created":
 
         case "cities/deleted":
+            
+        default: throw new Error("Unknown action type")
     }
 }
 
