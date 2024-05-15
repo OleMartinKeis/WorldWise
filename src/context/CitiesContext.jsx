@@ -62,9 +62,10 @@ function CitiesProvider({ children }) {
                 const data = await res.json();
                 dispatch({ type: "cities/loaded", payload: data });
             } catch {
-                alert("There was an error loading data");
-            } finally {
-                setIsLoading(false);
+                dispatch({
+                    type: "rejected",
+                    payload: "There was an error loading data",
+                });
             }
         }
         fetchCities();
