@@ -6,7 +6,9 @@ const CitiesContext = createContext();
 
 const initialState = {};
 
-function reducer(state, action) {}
+function reducer(state, action) {
+    cities: [],
+}
 
 function CitiesProvider({ children }) {
     const [cities, setCities] = useState([]);
