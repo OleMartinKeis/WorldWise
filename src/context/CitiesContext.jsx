@@ -10,14 +10,13 @@ const BASE_URL = "http://localhost:8000";
 
 const CitiesContext = createContext();
 
-const initialState = {};
+const initialState = {
+    cities: [],
+    isLoading: false,
+    currentCity: {},
+};
 
-function reducer(state, action) {
-    cities: [];
-    isLoading: false;
-    currentCity: {
-    }
-}
+function reducer(state, action) {}
 
 function CitiesProvider({ children }) {
     const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
